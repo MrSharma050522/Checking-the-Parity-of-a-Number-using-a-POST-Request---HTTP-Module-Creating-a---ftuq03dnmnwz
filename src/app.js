@@ -12,25 +12,28 @@ const server = http.createServer((req, res) => {
       const value = obj.num1;
       if (isNaN(value)) {
         res.statusCode = 400;
-        res.writeHead({ "Content-Type": "text/plain" });
+        // res.writeHead({ "Content-Type": "text/plain" });
         res.end(
           JSON.stringify({
+            "Content-Type": "text/plain",
             body: `${value} is not a number`,
           })
         );
       } else if (value % 2 === 0) {
         res.statusCode = 200;
-        res.writeHead({ "Content-Type": "text/plain" });
+        // res.writeHead({ "Content-Type": "text/plain" });
         res.end(
           JSON.stringify({
+            "Content-Type": "text/plain",
             body: `The number ${value} is even`,
           })
         );
       } else if (value % 2 !== 0) {
         res.statusCode = 404;
-        res.writeHead({ "Content-Type": "text/plain" });
+        // res.writeHead({ "Content-Type": "text/plain" });
         res.end(
           JSON.stringify({
+            "Content-Type": "text/plain",
             body: `The number ${value} is odd`,
           })
         );
