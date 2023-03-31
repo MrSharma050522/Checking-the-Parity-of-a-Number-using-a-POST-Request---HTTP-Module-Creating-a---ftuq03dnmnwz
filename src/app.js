@@ -18,6 +18,13 @@ const server = http.createServer((req, res) => {
             body: `The number ${value} is even`,
           })
         );
+      } else {
+        res.writeHead(404, { "Content-Type": "text/plain" });
+        res.end(
+          JSON.stringify({
+            body: `The number ${value} is odd`,
+          })
+        );
       }
 
       // Write the code here to check if the number is odd or even
