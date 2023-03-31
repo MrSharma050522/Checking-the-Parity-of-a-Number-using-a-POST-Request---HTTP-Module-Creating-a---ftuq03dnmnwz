@@ -17,8 +17,7 @@ const server = http.createServer((req, res) => {
             body: `${value} is not a number`,
           })
         );
-      }
-      if (value % 2 === 0) {
+      } else if (value % 2 === 0) {
         // res.statusCode = 200;
         res.writeHead(200, { "Content-Type": "text/plain" });
         res.end(
